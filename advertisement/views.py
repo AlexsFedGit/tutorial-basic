@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def advertisement_list(request):
+    return render(request, 'advertisement/advertisement_list.html')
