@@ -25,7 +25,9 @@ SECRET_KEY = 'wv4xagocmz_-k=x6@7dr$b^u1(8q9!-yfnyl$)x6453p0ge!!k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.1.106',
+]
 
 
 # Application definition
@@ -48,6 +50,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'board.middleware.filter_ip_middleware.FilterIpMiddleware',
+    # 'board.middleware.filter_ip_middleware.IncreaseResponseTime',
+    'board.middleware.filter_ip_middleware.SimpleDosFilter',
 ]
 
 ROOT_URLCONF = 'board.urls'
